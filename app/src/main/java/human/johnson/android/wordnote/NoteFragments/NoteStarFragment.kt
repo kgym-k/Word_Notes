@@ -170,12 +170,9 @@ class NoteStarFragment() : Fragment() {
             .inflate(R.layout.layout_bottom_sheet_sort_note, requireView().findViewById(R.id.bottom_sheet_sort_container))
 
         if (mNoteViewModel.getIsRecent()) {
-            bottomSheetSortView.sort_recent_img.setColorFilter(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-            bottomSheetSortView.sort_recent_text.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-        }
-        else {
-            bottomSheetSortView.sort_front_img.setColorFilter(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-            bottomSheetSortView.sort_front_text.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
+            bottomSheetSortView.sort_recent_check.visibility = View.VISIBLE
+        } else {
+            bottomSheetSortView.sort_front_check.visibility = View.VISIBLE
         }
 
         bottomSheetSortView.bottom_sort_recent.setOnClickListener {
