@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/note_update_word"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:hint="@string/front"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_star_emp"
+            app:startIconDrawable="@drawable/ic_note_front">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note_updateText_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/note_update_meaning"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:hint="@string/back"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_word"
+            app:startIconDrawable="@drawable/ic_note_back">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note_updateText_meaning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/note_update_memo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:hint="@string/note"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_meaning"
+            app:startIconDrawable="@drawable/ic_memo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note_updateText_memo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/note_update_star_emp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star_emp"
+            app:tint="@color/colorGray" />
+
+        <ImageView
+            android:id="@+id/note_update_star_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star_full"
+            app:tint="@color/colorYellow" />
+
+        <ImageView
+            android:id="@+id/colorSelect1_selected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_circle"
+            app:tint="@color/colorSelect1" />
+
+        <ImageView
+            android:id="@+id/colorSelect1_unselected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_circle_outline"
+            app:tint="@color/colorSelect1" />
+
+        <ImageView
+            android:id="@+id/colorSelect2_selected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle"
+            app:tint="@color/colorSelect2" />
+
+        <ImageView
+            android:id="@+id/colorSelect2_unselected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle_outline"
+            app:tint="@color/colorSelect2" />
+
+        <ImageView
+            android:id="@+id/colorSelect3_selected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle"
+            app:tint="@color/colorSelect3" />
+
+        <ImageView
+            android:id="@+id/colorSelect3_unselected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle_outline"
+            app:tint="@color/colorSelect3" />
+
+        <ImageView
+            android:id="@+id/colorSelect4_selected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle"
+            app:tint="@color/colorSelect4" />
+
+        <ImageView
+            android:id="@+id/colorSelect4_unselected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_update"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle_outline"
+            app:tint="@color/colorSelect4" />
+
+        <ImageView
+            android:id="@+id/colorSelect5_selected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle"
+            app:tint="@color/colorSelect5" />
+
+        <ImageView
+            android:id="@+id/colorSelect5_unselected_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_update"
+            app:layout_constraintTop_toBottomOf="@+id/note_update_memo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_circle_outline"
+            app:tint="@color/colorSelect5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

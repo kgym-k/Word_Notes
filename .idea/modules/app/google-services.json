@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "64296702556",
+    "firebase_url": "https://word-note-d09bd.firebaseio.com",
+    "project_id": "word-note-d09bd",
+    "storage_bucket": "word-note-d09bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64296702556:android:be05dcf1efbd715e3e8c99",
+        "android_client_info": {
+          "package_name": "human.johnson.android.wordnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64296702556-avrmbv7sb86h67vl5e96h8i5tfuesm91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "human.johnson.android.wordnote",
+            "certificate_hash": "6448b47867010d140570932dea23efb5a083f418"
+          }
+        },
+        {
+          "client_id": "64296702556-bacrbat3pkikdii7oj8255nli51r21dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJecwMez2BcW2x0UiwXgSBN7oeExfDTos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64296702556-bacrbat3pkikdii7oj8255nli51r21dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

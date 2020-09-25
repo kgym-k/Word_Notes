@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Word Notes</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8146724242472926/1904689634</string>
+    <string name="app_id">ca-app-pub-8146724242472926~6829713257</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="create_text">Create</string>
+    <string name="delete_text">Delete</string>
+    <string name="update_text">Update</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="folders">Folders</string>
+    <string name="delete_all_folders">Delete All Folders</string>
+    <string name="sort">Sort</string>
+    <string name="more_options">More Options</string>
+    <string name="recently_added">Recently Added</string>
+    <string name="name">Name</string>
+    <string name="front_card">Front Card</string>
+    <string name="set_every_card_front">Set Every Card Front</string>
+    <string name="set_every_card_back">Set Every Card Back</string>
+    <string name="delete_all_cards">Delete All Cards</string>
+    <string name="front">Front</string>
+    <string name="back">Back</string>
+    <string name="note">Note</string>
+    <string name="stared">Stared</string>
+    <string name="cards">Cards</string>
+    <string name="add">Add</string>
+    <string name="all_folders_are_removed">All folders are removed.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_all_folders_query">Delete all folders?</string>
+    <string name="all_folders_will_be_completely_deleted">All folders will be completely deleted.</string>
+    <string name="please_fill_out_name">Please fill out Name.</string>
+    <string name="added">Added!</string>
+    <string name="this_folder_will_be_completely_deleted">This folder will be completely deleted.</string>
+    <string name="delete_this_folder_query">Delete this Folder?</string>
+    <string name="this_folder_is_removed">This folder is removed.</string>
+    <string name="folder_is_updated">Folder is Updated!</string>
+    <string name="all">All</string>
+    <string name="star">Stared</string>
+    <string name="please_fill_out_front_and_back">Please fill out Front and Back.</string>
+    <string name="all_cards_will_be_completely_deleted">All cards will be completely deleted.</string>
+    <string name="delete_all_cards_query">Delete all cards?</string>
+    <string name="all_cards_are_removed">All cards are removed.</string>
+    <string name="all_notes_will_be_completely_deleted">All notes will be completely deleted.</string>
+    <string name="delete_all_notes_query">Delete all notes?</string>
+    <string name="all_notes_are_removed">All notes are removed.</string>
+    <string name="this_card_will_be_completely_deleted">this card will be completely deleted.</string>
+    <string name="delete_this_card_query">Delete this card?</string>
+    <string name="this_card_is_removed">This card is removed.</string>
+    <string name="card_is_updated">Card is Updated!</string>
+
+    <!-- settings -->
+    <string name="version">Version</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="about_this_app">About this app</string>
+</resources>

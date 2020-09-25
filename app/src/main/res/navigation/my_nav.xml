@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/shelfFragment">
+
+    <fragment
+        android:id="@+id/shelfFragment"
+        android:name="human.johnson.android.wordnote.ShelfFragments.ShelfFragment"
+        android:label="@string/folders"
+        tools:layout="@layout/fragment_shelf" >
+        <action
+            android:id="@+id/action_shelfFragment_to_shelfEditFragment"
+            app:destination="@id/shelfEditFragment" />
+        <action
+            android:id="@+id/action_shelfFragment_to_shelfUpdateFragment"
+            app:destination="@id/shelfUpdateFragment" />
+        <action
+            android:id="@+id/action_shelfFragment_to_noteCollectionFragment"
+            app:destination="@id/noteCollectionFragment" />
+        <action
+            android:id="@+id/action_shelfFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shelfUpdateFragment"
+        android:name="human.johnson.android.wordnote.ShelfFragments.ShelfUpdateFragment"
+        android:label="@string/update_text"
+        tools:layout="@layout/fragment_shelf_update" >
+        <argument
+            android:name="currentShelf"
+            app:argType="human.johnson.android.wordnote.model.Shelf" />
+        <action
+            android:id="@+id/action_shelfUpdateFragment_to_shelfFragment"
+            app:destination="@id/shelfFragment"
+            app:popUpTo="@id/shelfFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shelfEditFragment"
+        android:name="human.johnson.android.wordnote.ShelfFragments.ShelfEditFragment"
+        android:label="@string/create_text"
+        tools:layout="@layout/fragment_shelf_edit" >
+        <action
+            android:id="@+id/action_shelfEditFragment_to_shelfFragment"
+            app:destination="@id/shelfFragment"
+            app:popUpTo="@id/shelfFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteFragment"
+        android:label=""
+        tools:layout="@layout/fragment_note"/>
+    <fragment
+        android:id="@+id/noteEditFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteEditFragment"
+        android:label="@string/create_text"
+        tools:layout="@layout/fragment_note_edit">
+        <argument
+            android:name="currentId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_noteEditFragment_to_noteCollectionFragment"
+            app:destination="@id/noteCollectionFragment"
+            app:popUpTo="@id/noteCollectionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteUpdateFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteUpdateFragment"
+        android:label="@string/update_text"
+        tools:layout="@layout/fragment_note_update">
+        <argument
+            android:name="currentNote"
+            app:argType="human.johnson.android.wordnote.model.Note" />
+        <action
+            android:id="@+id/action_noteUpdateFragment_to_noteCollectionFragment"
+            app:destination="@id/noteCollectionFragment"
+            app:popUpTo="@id/noteCollectionFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/noteStarFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteStarFragment"
+        android:label=""
+        tools:layout="@layout/fragment_note_star" />
+
+    <fragment
+        android:id="@+id/noteCollectionFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteCollectionFragment"
+        android:label="@string/cards"
+        tools:layout="@layout/fragment_note_collection" >
+        <argument
+            android:name="currentId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_noteCollectionFragment_to_noteEditFragment"
+            app:destination="@id/noteEditFragment" />
+        <action
+            android:id="@+id/action_noteCollectionFragment_to_noteUpdateFragment"
+            app:destination="@id/noteUpdateFragment" />
+        <action
+            android:id="@+id/action_noteCollectionFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="human.johnson.android.wordnote.SettingFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>

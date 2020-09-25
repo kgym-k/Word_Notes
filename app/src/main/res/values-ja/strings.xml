@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Word Notes</string>
+    <string name="banner_ad_unit_id">ca-app-pub-8146724242472926/1904689634</string>
+    <string name="app_id">ca-app-pub-8146724242472926~6829713257</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">検索</string>
+    <string name="settings">設定</string>
+    <string name="create_text">新規作成</string>
+    <string name="delete_text">削除</string>
+    <string name="update_text">アップデート</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="folders">フォルダ</string>
+    <string name="delete_all_folders">全てのフォルダを削除</string>
+    <string name="sort">並び替え</string>
+    <string name="more_options">オプション</string>
+    <string name="recently_added">最近追加した項目</string>
+    <string name="name">フォルダ名</string>
+    <string name="front_card">オモテ</string>
+    <string name="set_every_card_front">全てのカードをオモテにする</string>
+    <string name="set_every_card_back">全てのカードをウラにする</string>
+    <string name="delete_all_cards">全てのカードを削除</string>
+    <string name="front">オモテ</string>
+    <string name="back">ウラ</string>
+    <string name="note">メモ</string>
+    <string name="stared">スター</string>
+    <string name="cards">カード</string>
+    <string name="add">追加</string>
+    <string name="all_folders_are_removed">全てのフォルダが削除されました</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="delete_all_folders_query">全てのフォルダを削除しますか?</string>
+    <string name="all_folders_will_be_completely_deleted">全てのフォルダは完全に削除されます.</string>
+    <string name="please_fill_out_name">フォルダ名を入力してください.</string>
+    <string name="added">追加されました!</string>
+    <string name="this_folder_will_be_completely_deleted">このフォルダは完全に削除されます.</string>
+    <string name="delete_this_folder_query">このフォルダを削除しますか?</string>
+    <string name="this_folder_is_removed">このフォルダは削除されました.</string>
+    <string name="folder_is_updated">フォルダがアップデートされました.</string>
+    <string name="all">All</string>
+    <string name="star">Star</string>
+    <string name="please_fill_out_front_and_back">オモテとウラを入力してください.</string>
+    <string name="all_cards_will_be_completely_deleted">全てのカードは完全に削除されます.</string>
+    <string name="delete_all_cards_query">全てのカードを削除しますか?</string>
+    <string name="all_cards_are_removed">全てのカードが削除されました.</string>
+    <string name="all_notes_will_be_completely_deleted">全てのカードは完全に削除されます.</string>
+    <string name="delete_all_notes_query">全てのカードを削除しますか?</string>
+    <string name="all_notes_are_removed">全てのカードは削除されました.</string>
+    <string name="this_card_will_be_completely_deleted">カードは完全に削除されます.</string>
+    <string name="delete_this_card_query">このカードを削除しますか?</string>
+    <string name="this_card_is_removed">このカードは削除されました.</string>
+    <string name="card_is_updated">カードがアップデートされました!</string>
+
+    <!-- settings -->
+    <string name="version">バージョン</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="terms_and_conditions">利用規約</string>
+    <string name="about_this_app">このアプリについて</string>
+</resources>
