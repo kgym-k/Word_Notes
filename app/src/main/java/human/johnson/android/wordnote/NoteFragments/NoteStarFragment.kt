@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayout
 import human.johnson.android.wordnote.MyApplication
+import human.johnson.android.wordnote.MyApplication.Companion.check_flag
 import human.johnson.android.wordnote.R
 import kotlinx.android.synthetic.main.fragment_note_star.view.*
 import kotlinx.android.synthetic.main.fragment_note_collection.*
@@ -40,6 +41,7 @@ class NoteStarFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         star_flag = true
+        check_flag = false
         val view = inflater.inflate(R.layout.fragment_note_star, container, false)
 
         mNoteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
@@ -49,6 +51,9 @@ class NoteStarFragment() : Fragment() {
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         mNoteViewModel.setStar(true)
+        mNoteViewModel.setCheck(false)
+        mNoteViewModel.setNotStar(false)
+        mNoteViewModel.setNotCheck(false)
         mNoteViewModel.note.observe(viewLifecycleOwner, Observer { note ->
             adapter.setData(note)
 
@@ -124,7 +129,7 @@ class NoteStarFragment() : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 var newText = "%" + newText + "%"
                 mNoteViewModel.setStr(newText)
-                mNoteViewModel.rearrangeNote(mNoteViewModel.getIsRecent(), true)
+                mNoteViewModel.rearrangeNote(mNoteViewModel.getIsRecent(), true, false, false, false)
                 return false
             }
         })
@@ -138,6 +143,10 @@ class NoteStarFragment() : Fragment() {
                 val bottomSheetView: View = LayoutInflater.from(requireContext())
                     .inflate(R.layout.layout_bottom_sheet_note, requireView()
                         .findViewById(R.id.bottom_sheet_container))
+                bottomSheetView.bottom_start_quiz.setOnClickListener {
+                    findNavController().navigate(R.id.action_noteCollectionFragment_to_startQuizFragment)
+                    bottomSheetDialog.dismiss()
+                }
                 bottomSheetView.bottom_sort.setOnClickListener {
                     sortBotomm()
                     bottomSheetDialog.dismiss()
@@ -177,11 +186,11 @@ class NoteStarFragment() : Fragment() {
 
         bottomSheetSortView.bottom_sort_recent.setOnClickListener {
             bottomSheetDialog.dismiss()
-            mNoteViewModel.rearrangeNote(true, true)
+            mNoteViewModel.rearrangeNote(true, true, false, false, false)
         }
         bottomSheetSortView.bottom_sort_front.setOnClickListener {
             bottomSheetDialog.dismiss()
-            mNoteViewModel.rearrangeNote(false, true)
+            mNoteViewModel.rearrangeNote(false, true, false, false, false)
         }
         bottomSheetDialog.setContentView(bottomSheetSortView)
         bottomSheetDialog.show()

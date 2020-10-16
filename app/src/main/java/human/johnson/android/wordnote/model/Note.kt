@@ -2,10 +2,7 @@ package human.johnson.android.wordnote.model
 
 import android.graphics.Color
 import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import androidx.room.*
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -24,5 +21,6 @@ data class Note(
     val memo: String,
     val front: Boolean,
     val star: Boolean,
+    val checked: Boolean,
     val color: Int
 ): Parcelable

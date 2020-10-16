@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizFragments.StartQuizFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_select_cards_from"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/select_cards_from"
+        app:layout_constraintBottom_toTopOf="@+id/textField_card_num"
+        app:layout_constraintEnd_toEndOf="@+id/textField_card_num"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_credit_card">
+
+        <AutoCompleteTextView
+            android:id="@+id/text_select_cards_from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_card_num"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/the_number_of_cards"
+        app:layout_constraintBottom_toTopOf="@+id/textField_card_order"
+        app:layout_constraintEnd_toEndOf="@+id/textField_card_order"
+        app:layout_constraintTop_toBottomOf="@+id/textField_select_cards_from"
+        app:startIconDrawable="@drawable/ic_num_of">
+
+        <AutoCompleteTextView
+            android:id="@+id/text_card_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_card_order"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/the_order_of_cards"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/start_quiz"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField_card_num"
+        app:startIconDrawable="@drawable/ic_order">
+
+        <AutoCompleteTextView
+            android:id="@+id/text_card_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/start_quiz"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/quiz_button_background"
+        android:elevation="4dp"
+        android:text="@string/start"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textField_card_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textField_card_order"
+        app:layout_constraintTop_toTopOf="@+id/textField_card_order" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,10 +14,19 @@ android {
         applicationId "human.johnson.android.wordnote"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 3
-        versionName "3.0"
+        versionCode 4
+        versionName "2.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        defaultConfig {
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = ["room.schemaLocation":
+                                 "$projectDir/schemas".toString()]
+                }
+            }
+        }
     }
 
     buildTypes {
@@ -34,6 +43,10 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 }
 
@@ -67,6 +80,7 @@ dependencies {
     compileOnly 'com.google.android.wearable:wearable:2.5.0'
     kapt "androidx.room:room-compiler:2.2.5"
     implementation "androidx.room:room-ktx:2.2.5"
+    testImplementation "androidx.room:room-testing:2.2.5"
     androidTestImplementation "androidx.room:room-testing:2.2.5"
 
     // Lifecycle components

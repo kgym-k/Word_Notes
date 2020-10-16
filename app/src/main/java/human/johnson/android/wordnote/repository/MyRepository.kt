@@ -1,7 +1,6 @@
 package human.johnson.android.wordnote.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import human.johnson.android.wordnote.data.MyDao
 import human.johnson.android.wordnote.model.Note
 import human.johnson.android.wordnote.model.Shelf
@@ -9,18 +8,19 @@ import human.johnson.android.wordnote.model.Shelf
 class MyRepository(private val MyDao: MyDao) {
 
     fun readShelfData(is_recent: Boolean, str: String?): LiveData<List<Shelf>> {
-        val data = MyDao.readShelfData(is_recent, str)
-        return data
+        return MyDao.readShelfData(is_recent, str)
     }
 
     fun readNoteData(id: Int, is_recent: Boolean, str: String?): LiveData<List<Note>> {
-        val data = MyDao.readNoteData(id, is_recent, str)
-        return data
+        return MyDao.readNoteData(id, is_recent, str)
     }
 
     fun readNoteStarData(id: Int, is_recent: Boolean, is_star: Boolean, str: String?): LiveData<List<Note>> {
-        val data = MyDao.readNoteStarData(id, is_recent, is_star, str)
-        return data
+        return MyDao.readNoteStarData(id, is_recent, is_star, str)
+    }
+
+    fun readNoteCheckData(id: Int, is_recent: Boolean, is_check: Boolean, str: String?): LiveData<List<Note>> {
+        return MyDao.readNoteCheckData(id, is_recent, is_check, str)
     }
 
     suspend fun addShelf(shelf: Shelf) {
@@ -37,6 +37,22 @@ class MyRepository(private val MyDao: MyDao) {
 
     suspend fun updateNote(note: Note) {
         MyDao.updateNote(note)
+    }
+
+    suspend fun updateNoteFront(id: Int, is_front: Boolean) {
+        MyDao.updateNoteFront(id, is_front)
+    }
+
+    suspend fun updateNoteNum(id: Int, num: Int) {
+        MyDao.updateNoteNum(id, num)
+    }
+
+    suspend fun resetNoteNum(id: Int) {
+        MyDao.resetNoteNum(id)
+    }
+
+    suspend fun updateNoteCheck(id: Int, is_check: Boolean) {
+        MyDao.updateNoteCheck(id, is_check)
     }
 
     suspend fun deleteShelf(shelf: Shelf) {
@@ -57,17 +73,5 @@ class MyRepository(private val MyDao: MyDao) {
 
     suspend fun deleteAllNotesInDb() {
         MyDao.deleteAllNotesInDb()
-    }
-
-    suspend fun updateNoteFront(id: Int, is_front: Boolean) {
-        MyDao.updateNoteFront(id, is_front)
-    }
-
-    suspend fun updateNoteNum(id: Int, num: Int) {
-        MyDao.updateNoteNum(id, num)
-    }
-
-    suspend fun resetNoteNum(id: Int) {
-        MyDao.resetNoteNum(id)
     }
 }

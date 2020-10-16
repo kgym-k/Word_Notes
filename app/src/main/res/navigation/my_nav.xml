@@ -94,6 +94,12 @@
         tools:layout="@layout/fragment_note_star" />
 
     <fragment
+        android:id="@+id/noteCheckFragment"
+        android:name="human.johnson.android.wordnote.NoteFragments.NoteCheckFragment"
+        android:label=""
+        tools:layout="@layout/fragment_note_check" />
+
+    <fragment
         android:id="@+id/noteCollectionFragment"
         android:name="human.johnson.android.wordnote.NoteFragments.NoteCollectionFragment"
         android:label="@string/cards"
@@ -110,11 +116,72 @@
         <action
             android:id="@+id/action_noteCollectionFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_noteCollectionFragment_to_startQuizFragment"
+            app:destination="@id/startQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="human.johnson.android.wordnote.SettingFragment"
         android:label="@string/settings"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_self"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startQuizFragment"
+        android:name="human.johnson.android.wordnote.QuizFragments.StartQuizFragment"
+        android:label="@string/quiz_settings"
+        tools:layout="@layout/fragment_start_quiz" >
+        <action
+            android:id="@+id/action_startQuizFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/noteCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="human.johnson.android.wordnote.QuizFragments.QuizFragment"
+        android:label="@string/quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_endQuizFragment"
+            app:destination="@id/endQuizFragment"
+            app:popUpTo="@id/noteCollectionFragment" />
+        <argument
+            android:name="card_from"
+            app:argType="integer" />
+        <argument
+            android:name="card_num"
+            app:argType="integer" />
+        <argument
+            android:name="card_order"
+            app:argType="integer" />
+        <argument
+            android:name="note_size"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/endQuizFragment"
+        android:name="human.johnson.android.wordnote.QuizFragments.EndQuizFragment"
+        android:label="@string/quiz_result"
+        tools:layout="@layout/fragment_end_quiz" >
+        <action
+            android:id="@+id/action_endQuizFragment_to_noteCollectionFragment"
+            app:destination="@id/noteCollectionFragment"
+            app:popUpTo="@id/noteCollectionFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_endQuizFragment_to_startQuizFragment"
+            app:destination="@id/startQuizFragment"
+            app:popUpTo="@id/startQuizFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="quizSIze"
+            app:argType="integer" />
+        <argument
+            android:name="correctNum"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

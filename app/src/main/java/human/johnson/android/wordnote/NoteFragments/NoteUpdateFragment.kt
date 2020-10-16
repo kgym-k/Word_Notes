@@ -115,6 +115,10 @@ class NoteUpdateFragment : Fragment() {
             color = 5
         }
 
+        view.update_note.setOnClickListener {
+            updateItem(view)
+        }
+
         setHasOptionsMenu(true)
 
         return view
@@ -140,9 +144,10 @@ class NoteUpdateFragment : Fragment() {
         val memo = note_updateText_memo.text.toString()
         val front = args.currentNote.front
         val star = note_update_star_full.isVisible
+        val check = args.currentNote.checked
 
         if (inputCheck(word, meaning)) {
-            val updatedNote = Note(args.currentNote.id, args.currentNote.shelfId, word, meaning, memo, front, star, color)
+            val updatedNote = Note(args.currentNote.id, args.currentNote.shelfId, word, meaning, memo, front, star, check, color)
             mNoteViewModel.updateNote(updatedNote)
             Toast.makeText(requireContext(), getString(R.string.card_is_updated), Toast.LENGTH_SHORT).show()
 

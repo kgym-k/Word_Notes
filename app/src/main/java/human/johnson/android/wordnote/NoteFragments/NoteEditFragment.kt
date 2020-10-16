@@ -102,6 +102,10 @@ class NoteEditFragment : Fragment() {
             color = 5
         }
 
+        view.create_note.setOnClickListener {
+            insertDataToDatabase(view)
+        }
+
         setHasOptionsMenu(true)
 
         return view
@@ -124,9 +128,10 @@ class NoteEditFragment : Fragment() {
         val memo = note_editText_memo.text.toString()
         val front = true
         val star = view.note_edit_star_full.isVisible
+        val check = false
 
         if(inputCheck(word, meaning)) {
-            val note = Note(0, args.currentId, word, meaning, memo, front, star, color)
+            val note = Note(0, args.currentId, word, meaning, memo, front, star, check, color)
             mNoteViewModel.addNote(note)
             mNoteViewModel.updateNoteNum(currentId, 1)
 

@@ -73,8 +73,7 @@ class NoteAdapter(val mNoteViewModel: NoteViewModel): RecyclerView.Adapter<NoteA
             }
         }
 
-
-        fun updateItem(is_front: Boolean, is_stared: Boolean) {
+        fun updateItem(is_front: Boolean, is_stared: Boolean, is_checked: Boolean) {
             val word = currentItem.word
             val meaning = currentItem.meaning
             val memo = currentItem.memo
@@ -82,7 +81,7 @@ class NoteAdapter(val mNoteViewModel: NoteViewModel): RecyclerView.Adapter<NoteA
             val star = is_stared
             val color = currentItem.color
 
-            val updatedNote = Note(currentItem.id, currentItem.shelfId, word, meaning, memo, front, star, color)
+            val updatedNote = Note(currentItem.id, currentItem.shelfId, word, meaning, memo, front, star, is_checked, color)
             mNoteViewModel.updateNote(updatedNote)
         }
 
@@ -112,12 +111,12 @@ class NoteAdapter(val mNoteViewModel: NoteViewModel): RecyclerView.Adapter<NoteA
             if (holder.itemView.front_card.isVisible) {
                 holder.itemView.front_card.disappear()
                 holder.itemView.back_card.appear()
-                updateItem(false, currentItem.star)
+                updateItem(false, currentItem.star, currentItem.checked)
             }
             else {
                 holder.itemView.back_card.disappear()
                 holder.itemView.front_card.appear()
-                updateItem(true, currentItem.star)
+                updateItem(true, currentItem.star, currentItem.checked)
             }
         }
 
@@ -150,28 +149,38 @@ class NoteAdapter(val mNoteViewModel: NoteViewModel): RecyclerView.Adapter<NoteA
             holder.itemView.back_star_emp.visibility = View.INVISIBLE
             holder.itemView.front_star_full.visibility = View.VISIBLE
             holder.itemView.back_star_full.visibility = View.VISIBLE
-            updateItem(currentItem.front, true)
+            updateItem(currentItem.front, true, currentItem.checked)
         }
         holder.itemView.front_star_full.setOnClickListener {
             holder.itemView.front_star_full.visibility = View.INVISIBLE
             holder.itemView.back_star_full.visibility = View.INVISIBLE
             holder.itemView.front_star_emp.visibility = View.VISIBLE
             holder.itemView.back_star_emp.visibility = View.VISIBLE
-            updateItem(currentItem.front, false)
+            updateItem(currentItem.front, false, currentItem.checked)
         }
         holder.itemView.back_star_emp.setOnClickListener {
             holder.itemView.front_star_emp.visibility = View.INVISIBLE
             holder.itemView.back_star_emp.visibility = View.INVISIBLE
             holder.itemView.front_star_full.visibility = View.VISIBLE
             holder.itemView.back_star_full.visibility = View.VISIBLE
-            updateItem(currentItem.front, true)
+            updateItem(currentItem.front, true, currentItem.checked)
         }
         holder.itemView.back_star_full.setOnClickListener {
             holder.itemView.front_star_full.visibility = View.INVISIBLE
             holder.itemView.back_star_full.visibility = View.INVISIBLE
             holder.itemView.front_star_emp.visibility = View.VISIBLE
             holder.itemView.back_star_emp.visibility = View.VISIBLE
-            updateItem(currentItem.front, false)
+            updateItem(currentItem.front, false, currentItem.checked)
+        }
+
+        // check
+        if (currentItem.checked) {
+            holder.itemView.front_check.visibility = View.VISIBLE
+            holder.itemView.back_check.visibility = View.VISIBLE
+        }
+        else {
+            holder.itemView.front_check.visibility = View.INVISIBLE
+            holder.itemView.back_check.visibility = View.INVISIBLE
         }
     }
 

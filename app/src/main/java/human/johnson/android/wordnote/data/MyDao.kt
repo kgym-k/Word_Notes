@@ -1,7 +1,6 @@
 package human.johnson.android.wordnote.data
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import human.johnson.android.wordnote.model.Note
 import human.johnson.android.wordnote.model.Shelf
@@ -39,6 +38,9 @@ interface MyDao {
     @Query("UPDATE shelf_table SET noteNum = 0 WHERE id = :id")
     suspend fun resetNoteNum(id: Int)
 
+    @Query("UPDATE note_table SET checked = :is_check WHERE id = :id")
+    suspend fun updateNoteCheck(id: Int, is_check: Boolean)
+
     @Query("DELETE FROM note_table WHERE shelfId = :id")
     suspend fun deleteAllNotes(id: Int)
 
@@ -58,4 +60,10 @@ interface MyDao {
             "WHERE word LIKE :str OR meaning LIKE :str OR memo LIKE :str " +
             "ORDER BY CASE WHEN :is_recent = 1 THEN id END DESC, CASE WHEN :is_recent = 0 THEN word END")
     fun readNoteStarData(id: Int, is_recent: Boolean, is_star: Boolean, str: String?): LiveData<List<Note>>
+
+    @Query("SELECT * FROM (SELECT * FROM note_table WHERE shelfId = :id AND checked = :is_check) " +
+            " WHERE word LIKE :str OR meaning LIKE :str OR memo LIKE :str " +
+            "ORDER BY CASE WHEN :is_recent = 1 THEN id END DESC, CASE WHEN :is_recent = 0 THEN word END")
+    fun readNoteCheckData(id: Int, is_recent: Boolean, is_check: Boolean, str: String?): LiveData<List<Note>>
 }
+

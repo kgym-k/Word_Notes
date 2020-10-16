@@ -93,6 +93,10 @@ class ShelfUpdateFragment : Fragment() {
             color = 5
         }
 
+        view.update_shelf.setOnClickListener {
+            updateItem()
+        }
+
         setHasOptionsMenu(true)
 
         return view

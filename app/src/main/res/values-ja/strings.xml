@@ -22,14 +22,12 @@
     <string name="more_options">オプション</string>
     <string name="recently_added">最近追加した項目</string>
     <string name="name">フォルダ名</string>
-    <string name="front_card">オモテ</string>
-    <string name="set_every_card_front">全てのカードをオモテにする</string>
-    <string name="set_every_card_back">全てのカードをウラにする</string>
-    <string name="delete_all_cards">全てのカードを削除</string>
+    <string name="front_card">オモテ面</string>
     <string name="front">オモテ</string>
     <string name="back">ウラ</string>
     <string name="note">メモ</string>
     <string name="stared">スター</string>
+    <string name="checked">チェック</string>
     <string name="cards">カード</string>
     <string name="add">追加</string>
     <string name="all_folders_are_removed">全てのフォルダが削除されました</string>
@@ -45,6 +43,7 @@
     <string name="folder_is_updated">フォルダがアップデートされました.</string>
     <string name="all">All</string>
     <string name="star">Star</string>
+    <string name="check">Checked</string>
     <string name="please_fill_out_front_and_back">オモテとウラを入力してください.</string>
     <string name="all_cards_will_be_completely_deleted">全てのカードは完全に削除されます.</string>
     <string name="delete_all_cards_query">全てのカードを削除しますか?</string>
@@ -57,9 +56,60 @@
     <string name="this_card_is_removed">このカードは削除されました.</string>
     <string name="card_is_updated">カードがアップデートされました!</string>
 
+    <!-- bottom sheet -->
+    <string name="start_quiz">クイズを開始</string>
+    <string name="set_every_card_front">全てのカードをオモテにする</string>
+    <string name="set_every_card_back">全てのカードをウラにする</string>
+    <string name="delete_all_cards">全てのカードを削除</string>
+
     <!-- settings -->
     <string name="version">バージョン</string>
     <string name="privacy_policy">プライバシーポリシー</string>
     <string name="terms_and_conditions">利用規約</string>
     <string name="about_this_app">このアプリについて</string>
+
+    <!-- quiz info menu -->
+    <string name="quiz_information">クイズの使い方</string>
+
+    <!-- fragment names-->
+    <string name="quiz_settings">クイズの設定</string>
+    <string name="quiz">クイズ</string>
+    <string name="quiz_result">クイズの結果</string>
+
+    <!-- start quiz -->
+    <string name="select_cards_from">カードの種類</string>
+    <string name="the_number_of_cards">カードの数</string>
+    <string name="the_order_of_cards">カードの順番</string>
+    <string name="start">スタート</string>
+
+    <!-- card settings -->
+    <string name="all_quiz">全て</string>
+    <string name="stared_quiz">スター</string>
+    <string name="checked_quiz">チェック</string>
+    <string name="not_stared">スター以外</string>
+    <string name="not_checked">チェック以外</string>
+    <string name="shuffle">シャッフル</string>
+    <string name="there_is_no_card">カードがありません</string>
+
+    <!-- alert dialog -->
+    <string name="confirmation">確認</string>
+    <string name="quit_quiz_query">本当にクイズを終了しますか？</string>
+
+    <!-- end quiz -->
+    <string name="try_again">もう一度</string>
+    <string name="finish">終了</string>
+
+    <!-- end quiz comment -->
+    <string name="excellent">Excellent!</string>
+    <string name="good">Good!</string>
+    <string name="fair">Good!</string>
+
+    <string name="how_to_use_quiz">クイズの使い方</string>
+    <string name="quiz_inst1">1.オプションを選んでクイズを開始！</string>
+    <string name="quiz_inst2">2. オモテ面の意味が分からないときはバッドを、分かるときにはグッドを押して下さい。</string>
+    <string name="quiz_inst_bad">バッド</string>
+    <string name="quiz_inst_good">グッド</string>
+    <string name="quiz_inst3">3. バッドを押すと、そのカードにチェックが付きます。</string>
+    <string name="quiz_inst4">4. カードはタップすることでひっくり返せます。</string>
+
 </resources>

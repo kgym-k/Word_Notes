@@ -39,7 +39,7 @@
                 android:id="@+id/front_star_full"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,12 +51,22 @@
                 android:id="@+id/front_star_emp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_star_emp"
                 app:tint="@color/colorGray" />
+
+            <ImageView
+                android:id="@+id/front_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toEndOf="@+id/front_star_full"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_check_mid"
+                app:tint="@color/colorCheck" />
 
             <TextView
                 android:id="@+id/front_word_txt"
@@ -164,7 +174,7 @@
                 android:id="@+id/back_star_full"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="parent"
@@ -176,12 +186,22 @@
                 android:id="@+id/back_star_emp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_star_emp"
                 app:tint="@color/colorGray" />
+
+            <ImageView
+                android:id="@+id/back_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toEndOf="@+id/back_star_full"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_check_mid"
+                app:tint="@color/colorCheck" />
 
             <TextView
                 android:id="@+id/back_word_txt"

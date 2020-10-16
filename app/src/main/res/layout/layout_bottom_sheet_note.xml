@@ -1,204 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bottom_sheet_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/layout_bottom_background"
-    android:orientation="vertical">
-
-    <View
-        android:layout_width="20dp"
-        android:layout_height="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/colorDivider" />
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/bottom_sort_sort"
+        android:id="@+id/bottom_sheet_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
+        android:background="@drawable/layout_bottom_background"
+        android:orientation="vertical">
 
-        <TextView
+        <View
+            android:layout_width="20dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorDivider" />
+
+        <LinearLayout
+            android:id="@+id/bottom_sort_sort"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/more_options"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
-        </TextView>
+            android:layout_gravity="center_vertical"
+            android:background="?android:selectableItemBackground"
+            android:orientation="horizontal"
+            android:padding="12dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/more_options"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp"></TextView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorSecondaryText"/>
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/bottom_sort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_sort"
-            app:tint="@color/colorSecondaryText" />
-
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/colorSecondaryText" />
+
+        <Button
+            android:id="@+id/bottom_start_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/sort"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/quiz_button_background"
+            android:elevation="4dp"
+            android:text="@string/start_quiz"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
 
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/bottom_flip_to_front"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_round_flip_to_front"
-            app:tint="@color/colorSecondaryText" />
-
-        <TextView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/set_every_card_front"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
-        </TextView>
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/bottom_flip_to_back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_round_flip_to_back"
-            app:tint="@color/colorSecondaryText" />
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/set_every_card_back"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
-        </TextView>
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/bottom_sort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?android:selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_sort"
+                        app:tint="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/sort"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottom_flip_to_front"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?android:selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_round_flip_to_front"
+                        app:tint="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/set_every_card_front"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottom_flip_to_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?android:selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_round_flip_to_back"
+                        app:tint="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/set_every_card_back"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:id="@+id/bottom_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?android:selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_delete"
+                        app:tint="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/delete_all_cards"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:id="@+id/bottom_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?android:selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_settings"
+                        app:tint="@color/colorSecondaryText" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/settings"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="16sp"></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorDivider"/>
-
-    <LinearLayout
-        android:id="@+id/bottom_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_delete"
-            app:tint="@color/colorSecondaryText" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/delete_all_cards"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
-        </TextView>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorDivider"/>
-
-    <LinearLayout
-        android:id="@+id/bottom_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_settings"
-            app:tint="@color/colorSecondaryText" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/settings"
-            android:textColor="@color/colorPrimaryText"
-            android:textSize="16sp">
-        </TextView>
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

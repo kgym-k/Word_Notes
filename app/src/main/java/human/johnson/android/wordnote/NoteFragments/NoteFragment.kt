@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayout
 import human.johnson.android.wordnote.MyApplication
+import human.johnson.android.wordnote.MyApplication.Companion.check_flag
 import human.johnson.android.wordnote.MyApplication.Companion.currentId
 import human.johnson.android.wordnote.MyApplication.Companion.star_flag
 import human.johnson.android.wordnote.R
@@ -40,6 +41,7 @@ class NoteFragment() : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         star_flag = false
+        check_flag = false
         val view = inflater.inflate(R.layout.fragment_note, container, false)
 
         mNoteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
@@ -50,6 +52,9 @@ class NoteFragment() : Fragment() {
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         mNoteViewModel.setStar(false)
+        mNoteViewModel.setCheck(false)
+        mNoteViewModel.setNotStar(false)
+        mNoteViewModel.setNotCheck(false)
         mNoteViewModel.note.observe(viewLifecycleOwner, Observer { note ->
             adapter.setData(note)
 
@@ -74,7 +79,7 @@ class NoteFragment() : Fragment() {
             view.findNavController().navigate(action)
         }
 
-        // scroll
+        // select
         (parentFragment as NoteCollectionFragment).tab_layout
             .addOnTabSelectedListener((object : TabLayout.OnTabSelectedListener {
                 override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -126,7 +131,7 @@ class NoteFragment() : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 var newText = "%" + newText + "%"
                 mNoteViewModel.setStr(newText)
-                mNoteViewModel.rearrangeNote(mNoteViewModel.getIsRecent(), false)
+                mNoteViewModel.rearrangeNote(mNoteViewModel.getIsRecent(), false, false, false, false)
                 return false
             }
         })
@@ -143,6 +148,10 @@ class NoteFragment() : Fragment() {
                         R.layout.layout_bottom_sheet_note, requireView()
                             .findViewById(R.id.bottom_sheet_container)
                     )
+                bottomSheetView.bottom_start_quiz.setOnClickListener {
+                    findNavController().navigate(R.id.action_noteCollectionFragment_to_startQuizFragment)
+                    bottomSheetDialog.dismiss()
+                }
                 bottomSheetView.bottom_sort.setOnClickListener {
                     sortBotomm()
                     bottomSheetDialog.dismiss()
@@ -186,11 +195,11 @@ class NoteFragment() : Fragment() {
 
         bottomSheetSortView.bottom_sort_recent.setOnClickListener {
             bottomSheetDialog.dismiss()
-            mNoteViewModel.rearrangeNote(true, false)
+            mNoteViewModel.rearrangeNote(true, false, false, false, false)
         }
         bottomSheetSortView.bottom_sort_front.setOnClickListener {
             bottomSheetDialog.dismiss()
-            mNoteViewModel.rearrangeNote(false, false)
+            mNoteViewModel.rearrangeNote(false, false, false, false, false)
         }
         bottomSheetDialog.setContentView(bottomSheetSortView)
         bottomSheetDialog.show()

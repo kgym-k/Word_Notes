@@ -1,197 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/shelf_update_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="64dp"
-            android:hint="@string/name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:startIconDrawable="@drawable/ic_outline_folder">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/shelf_updateText_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shelf_update_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="64dp"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_outline_folder">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shelf_updateText_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <ImageView
-            android:id="@+id/colorSelect1_selected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_circle"
-            app:tint="@color/colorSelect1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/colorSelect1_unselected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_circle_outline"
-            app:tint="@color/colorSelect1" />
+            <ImageView
+                android:id="@+id/colorSelect1_selected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="36dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="@color/colorSelect1" />
 
-        <ImageView
-            android:id="@+id/colorSelect2_selected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle"
-            app:tint="@color/colorSelect2" />
+            <ImageView
+                android:id="@+id/colorSelect1_unselected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintBottom_toTopOf="@+id/update_shelf"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect2_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle_outline"
+                app:tint="@color/colorSelect1" />
 
-        <ImageView
-            android:id="@+id/colorSelect2_unselected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle_outline"
-            app:tint="@color/colorSelect2" />
+            <ImageView
+                android:id="@+id/colorSelect2_selected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="@color/colorSelect2" />
 
-        <ImageView
-            android:id="@+id/colorSelect3_selected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle"
-            app:tint="@color/colorSelect3" />
+            <ImageView
+                android:id="@+id/colorSelect2_unselected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect3_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect1_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle_outline"
+                app:tint="@color/colorSelect2" />
 
-        <ImageView
-            android:id="@+id/colorSelect3_unselected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle_outline"
-            app:tint="@color/colorSelect3" />
+            <ImageView
+                android:id="@+id/colorSelect3_selected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="@color/colorSelect3" />
 
-        <ImageView
-            android:id="@+id/colorSelect4_selected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle"
-            app:tint="@color/colorSelect4" />
+            <ImageView
+                android:id="@+id/colorSelect3_unselected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect4_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect2_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle_outline"
+                app:tint="@color/colorSelect3" />
 
-        <ImageView
-            android:id="@+id/colorSelect4_unselected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_shelf_update"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle_outline"
-            app:tint="@color/colorSelect4" />
+            <ImageView
+                android:id="@+id/colorSelect4_selected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="@color/colorSelect4" />
 
-        <ImageView
-            android:id="@+id/colorSelect5_selected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle"
-            app:tint="@color/colorSelect5" />
+            <ImageView
+                android:id="@+id/colorSelect4_unselected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/colorSelect5_selected_shelf_update"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect3_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle_outline"
+                app:tint="@color/colorSelect4" />
 
-        <ImageView
-            android:id="@+id/colorSelect5_unselected_shelf_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_shelf_update"
-            app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_circle_outline"
-            app:tint="@color/colorSelect5" />
+            <ImageView
+                android:id="@+id/colorSelect5_selected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="48dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle"
+                app:tint="@color/colorSelect5" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <ImageView
+                android:id="@+id/colorSelect5_unselected_shelf_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/colorSelect4_selected_shelf_update"
+                app:layout_constraintTop_toBottomOf="@+id/shelf_update_text"
+                app:srcCompat="@drawable/ic_circle_outline"
+                app:tint="@color/colorSelect5" />
+
+            <Button
+                android:id="@+id/update_shelf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/quiz_button_background"
+                android:elevation="4dp"
+                android:text="@string/update_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

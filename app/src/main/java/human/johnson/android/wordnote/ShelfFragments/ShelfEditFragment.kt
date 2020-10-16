@@ -78,6 +78,10 @@ class ShelfEditFragment : Fragment() {
             color = 5
         }
 
+        view.create_shelf.setOnClickListener {
+            insertDataToDatabase()
+        }
+
         setHasOptionsMenu(true)
 
         return view
