@@ -188,4 +188,4 @@ class NoteAdapter(val mNoteViewModel: NoteViewModel): RecyclerView.Adapter<NoteA
         this.noteList = note
         notifyDataSetChanged()
     }
-} 
+}
